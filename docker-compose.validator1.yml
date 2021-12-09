@@ -19,7 +19,7 @@ x-node:
       --min-gas-price=0 \
       --rpc-http-api=ADMIN,DEBUG,TRACE,TXPOOL,WEB3,ETH,NET,PERM,IBFT \
       --rpc-ws-api=ADMIN,DEBUG,TRACE,TXPOOL,WEB3,ETH,NET,PERM,IBFT \
-      --bootnodes=enode://${BOOTNODE}@validator.cas-ll.net:30303 ;
+      --bootnodes=enode://${BOOTNODE}@validator1:30303 ;
 
 services:
   validator1:
