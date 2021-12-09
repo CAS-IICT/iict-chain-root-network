@@ -16,5 +16,6 @@ if [ ! -f config/genesis.json ]; then
     ./create_network.sh
 fi
 
+export BOOTNODE=$(cat nodes/validator1/key.pub)
 
 docker-compose -f docker-compose.validator$1.yml up -d
