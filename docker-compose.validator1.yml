@@ -47,6 +47,8 @@ services:
       - ./config:/config
       - ./nodes/validator2:/opt/besu/keys
       - ./logs/besu:/tmp/besu
+    depends_on:
+      - validator1
     ports:
       - 32303:30303
       - 28545:8545
@@ -62,6 +64,8 @@ services:
       - ./config:/config
       - ./nodes/validator3:/opt/besu/keys
       - ./logs/besu:/tmp/besu
+    depends_on:
+      - validator2
     ports:
       - 33303:30303
       - 38545:8545
@@ -77,6 +81,8 @@ services:
       - ./config:/config
       - ./nodes/validator4:/opt/besu/keys
       - ./logs/besu:/tmp/besu
+    depends_on:
+      - validator3
     ports:
       - 34303:30303
       - 48545:8545
