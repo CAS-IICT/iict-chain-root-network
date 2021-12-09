@@ -1,0 +1,20 @@
+{
+  "config": {
+    "chainId": 1337,
+    "constantinopleFixBlock": 0,
+    "contractSizeLimit": 2147483647,
+    "ibft2": {
+      "epochlength": 30000,
+      "blockperiodseconds": 5,
+      "requesttimeoutseconds": 10
+    }
+  },
+  "nonce": "0x0",
+  "timestamp": "0x58ee40ba",
+  "gasLimit": "0x47b760",
+  "difficulty": "0x1",
+  "mixHash": "0x63746963616c2062797a616e74696e65206661756c7420746f6c6572616e6365",
+  "coinbase": "0x0000000000000000000000000000000000000000",
+  "alloc": {},
+  "extraData": "0xf8d2a00000000000000000000000000000000000000000000000000000000000000000f8a8942a1332b199b89ca710689c7233032211328d5e189482b8a773afb85e2bd55e2dbd5a9982eff6b938189491a728c5a740d9d67ca8a17f5a397f040ff29b6694e86bf986792eb45fe5a7853489a9b10e9eaa0bf294f879c5b95efa070c32c4e10d1ef268e63b01822e940eeaaf32e0df5d6e9c9acf5aba4a067ca019ed4b94dee33f1ede3da625502e8b964ab4b62f7adbad1e946cf20300a3691ff803eaac6377c37ad2dced30cb808400000000c0"
+}

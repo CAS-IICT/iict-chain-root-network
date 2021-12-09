@@ -1,0 +1,82 @@
+version: '3.6'
+
+x-node:
+  &node
+  restart: "on-failure"
+  image: hyperledger/besu:${BESU_VERSION:-latest}
+  entrypoint:
+    - /bin/bash
+    - -c
+    - |
+      /opt/besu/bin/besu \
+      --data-path=/opt/besu/data \
+      --config-file=/config/config.toml \
+      --genesis-file=/config/genesis.json \
+      --static-nodes-file=/config/static-nodes.json \
+      --node-private-key-file=/opt/besu/keys/key \
+      --p2p-host=$$(hostname -i) \
+      --Xdns-enabled=true \
+      --min-gas-price=0 \
+      --rpc-http-api=ADMIN,DEBUG,TRACE,TXPOOL,WEB3,ETH,NET,PERM,IBFT \
+      --rpc-ws-api=ADMIN,DEBUG,TRACE,TXPOOL,WEB3,ETH,NET,PERM,IBFT ;
+
+services:
+  validator1:
+    <<: *node
+    container_name: validator1
+    environment:
+      - LOG4J_CONFIGURATION_FILE=/config/log-config.xml
+      - NODE_NAME=validator1
+    volumes:
+      - ./config:/config
+      - ./nodes/validator1:/opt/besu/keys
+      - ./logs/besu:/tmp/besu
+    ports:
+      - 30303:30303
+      - 8545:8545
+      - 8546:8546
+
+  validator2:
+    <<: *node
+    container_name: validator2
+    environment:
+      - LOG4J_CONFIGURATION_FILE=/config/log-config.xml
+      - NODE_NAME=validator2
+    volumes:
+      - ./config:/config
+      - ./nodes/validator2:/opt/besu/keys
+      - ./logs/besu:/tmp/besu
+    ports:
+      - 32303:30303
+      - 28545:8545
+      - 28546:8546
+
+  validator3:
+    <<: *node
+    container_name: validator3
+    environment:
+      - LOG4J_CONFIGURATION_FILE=/config/log-config.xml
+      - NODE_NAME=validator3
+    volumes:
+      - ./config:/config
+      - ./nodes/validator3:/opt/besu/keys
+      - ./logs/besu:/tmp/besu
+    ports:
+      - 33303:30303
+      - 38545:8545
+      - 38546:8546
+
+  validator4:
+    <<: *node
+    container_name: validator4
+    environment:
+      - LOG4J_CONFIGURATION_FILE=/config/log-config.xml
+      - NODE_NAME=validator4
+    volumes:
+      - ./config:/config
+      - ./nodes/validator4:/opt/besu/keys
+      - ./logs/besu:/tmp/besu
+    ports:
+      - 34303:30303
+      - 48545:8545
+      - 48546:8546
