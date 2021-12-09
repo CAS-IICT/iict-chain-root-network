@@ -32,9 +32,9 @@ services:
       - ./nodes/validator5:/opt/besu/keys
       - ./logs/besu:/tmp/besu
     ports:
-      - 35303:30303
-      - 58545:8545
-      - 58546:8546
+      - "35303:30303"
+      - "58545:8545"
+      - "58546:8546"
 
   validator6:
     <<: *node
@@ -49,7 +49,7 @@ services:
     depends_on:
       - validator5
     ports:
-      - 36303:30303
-      - 68545:8545
-      - 68546:8546
+      - "36303:30303"
+      - "68545:8545"
+      - "68546:8546"
 
