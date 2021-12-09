@@ -12,7 +12,6 @@ x-node:
       --data-path=/opt/besu/data \
       --config-file=/config/config.toml \
       --genesis-file=/config/genesis.json \
-      --static-nodes-file=/config/static-nodes.json \
       --node-private-key-file=/opt/besu/keys/key \
       --p2p-host=$$(hostname -i) \
       --Xdns-enabled=true \
