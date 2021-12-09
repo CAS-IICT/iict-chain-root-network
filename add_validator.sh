@@ -26,4 +26,4 @@ add_validator $ADDRESS http://127.0.0.1:48545
 
 
 # 判断是否添加成功
-# curl -X POST --data '{"jsonrpc":"2.0","method":"qbft_getValidatorsByBlockNumber","params":["latest"], "id":1}' http://127.0.0.1:18545
+# curl -X POST --data '{"jsonrpc":"2.0","method":"ibft_getValidatorsByBlockNumber","params":["latest"], "id":1}' http://127.0.0.1:18545
