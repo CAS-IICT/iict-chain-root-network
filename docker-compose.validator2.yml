@@ -18,7 +18,8 @@ x-node:
       --Xdns-enabled=true \
       --min-gas-price=0 \
       --rpc-http-api=ADMIN,DEBUG,TRACE,TXPOOL,WEB3,ETH,NET,PERM,IBFT \
-      --rpc-ws-api=ADMIN,DEBUG,TRACE,TXPOOL,WEB3,ETH,NET,PERM,IBFT ;
+      --rpc-ws-api=ADMIN,DEBUG,TRACE,TXPOOL,WEB3,ETH,NET,PERM,IBFT \
+      --bootnodes=enode://${BOOTNODE}@validator.cas-ll.net:30303 ;
 
 services:
   validator5:
@@ -46,6 +47,8 @@ services:
       - ./config:/config
       - ./nodes/validator6:/opt/besu/keys
       - ./logs/besu:/tmp/besu
+    depends_on:
+      - validator5
     ports:
       - 36303:30303
       - 68545:8545
@@ -61,6 +64,8 @@ services:
       - ./config:/config
       - ./nodes/validator7:/opt/besu/keys
       - ./logs/besu:/tmp/besu
+    depends_on:
+      - validator6
     ports:
       - 37303:30303
       - 78545:8545
@@ -76,6 +81,8 @@ services:
       - ./config:/config
       - ./nodes/validator8:/opt/besu/keys
       - ./logs/besu:/tmp/besu
+    depends_on:
+      - validator7
     ports:
       - 38303:30303
       - 88545:8545
