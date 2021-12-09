@@ -13,12 +13,12 @@ x-node:
       --config-file=/config/config.toml \
       --genesis-file=/config/genesis.json \
       --node-private-key-file=/opt/besu/keys/key \
+      --static-nodes-file=/config/static-nodes.json \
       --p2p-host=$$(hostname -i) \
       --Xdns-enabled=true \
       --min-gas-price=0 \
       --rpc-http-api=ADMIN,DEBUG,TRACE,TXPOOL,WEB3,ETH,NET,PERM,IBFT \
-      --rpc-ws-api=ADMIN,DEBUG,TRACE,TXPOOL,WEB3,ETH,NET,PERM,IBFT \
-      --bootnodes=enode://${BOOTNODE}@validator.cas-ll.net:30303 ;
+      --rpc-ws-api=ADMIN,DEBUG,TRACE,TXPOOL,WEB3,ETH,NET,PERM,IBFT ;
 
 services:
   validator5:
