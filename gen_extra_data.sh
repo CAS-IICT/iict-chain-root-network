@@ -11,9 +11,11 @@ count=$(ls -l nodes|grep "^d"|wc -l)
 echo '['  > $BESU_DIR/nodes.json
 index=1
 for node in $(ls nodes); do
-  echo '"'$(cat nodes/$node/address)'"' >> $BESU_DIR/nodes.json
-  if [ $index -lt $count ]; then
-    echo ',' >> $BESU_DIR/nodes.json
+  if [ $index -lt 5 ]; then
+    echo '"'$(cat nodes/$node/address)'"' >> $BESU_DIR/nodes.json
+    if [ $index -lt 4 ]; then
+      echo ',' >> $BESU_DIR/nodes.json
+    fi
   fi
   let index++
 done
