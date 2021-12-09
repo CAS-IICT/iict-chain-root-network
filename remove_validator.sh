@@ -20,9 +20,9 @@ function remove_validator(){
 }
 
 remove_validator $ADDRESS http://127.0.0.1:8545
-remove_validator $ADDRESS http://127.0.0.1:28545
-remove_validator $ADDRESS http://127.0.0.1:38545
-remove_validator $ADDRESS http://127.0.0.1:48545
+remove_validator $ADDRESS http://127.0.0.1:32545
+remove_validator $ADDRESS http://127.0.0.1:33545
+remove_validator $ADDRESS http://127.0.0.1:34545
 
 
 # 判断是否添加成功

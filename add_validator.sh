@@ -20,9 +20,9 @@ function add_validator(){
 }
 
 add_validator $ADDRESS http://127.0.0.1:8545
-add_validator $ADDRESS http://127.0.0.1:28545
-add_validator $ADDRESS http://127.0.0.1:38545
-add_validator $ADDRESS http://127.0.0.1:48545
+add_validator $ADDRESS http://127.0.0.1:32545
+add_validator $ADDRESS http://127.0.0.1:33545
+add_validator $ADDRESS http://127.0.0.1:34545
 
 
 # 判断是否添加成功
