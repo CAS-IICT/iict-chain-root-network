@@ -1,3 +1,16 @@
 /logs
 /nodes
 .DS_Store
+
+genesis-contracts/node_modules/
+genesis-contracts/build/
+.idea
+pids
+logs
+.idea/
+genesis-contracts/contracts/flattened/*.sol
+
+artifacts
+cache
+coverage
+coverage.json
