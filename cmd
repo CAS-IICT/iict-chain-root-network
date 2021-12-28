@@ -1,17 +1,3 @@
-docker-compose -f docker-compose.bootnode.yml up -d
-
-docker-compose -f docker-compose.validator.yml up -d
-
-
-docker-compose -f docker-compose.validator.yml up --force-recreate -d 
-
-docker-compose -f docker-compose.validator.yml down -v
-
-
-docker logs -f bootnode
-
-docker logs -f validator
-
 curl -X POST --data '{"jsonrpc":"2.0","method":"admin_peers","params":[],"id":1}' http://47.242.195.124:8545
 
 curl -X POST --data '{"jsonrpc":"2.0","method":"admin_nodeInfo","params":[],"id":1}' http://47.242.195.124:8545
