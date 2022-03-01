@@ -2,7 +2,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"admin_peers","params":[],"id":1}
 
 curl -X POST --data '{"jsonrpc":"2.0","method":"admin_nodeInfo","params":[],"id":1}' http://47.242.195.124:8545
 
-curl -X POST --data '{"jsonrpc":"2.0","method":"qbft_getValidatorsByBlockNumber","params":["latest"], "id":1}' http://47.242.195.124:8545
+curl -X POST --data '{"jsonrpc":"2.0","method":"ibft_getValidatorsByBlockNumber","params":["latest"], "id":1}' http://localhost:31545
 
 curl -X POST --data '{"jsonrpc":"2.0","method":"txpool_besuPendingTransactions","params":[2],"id":1}' http://cas-ll.com:8545
 

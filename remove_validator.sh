@@ -19,11 +19,11 @@ function remove_validator(){
     curl -X POST --data '{"jsonrpc":"2.0","method":"ibft_proposeValidatorVote","params":["'$1'", false], "id":1}' $2
 }
 
-remove_validator $ADDRESS http://127.0.0.1:8545
+remove_validator $ADDRESS http://127.0.0.1:31545
 remove_validator $ADDRESS http://127.0.0.1:32545
 remove_validator $ADDRESS http://127.0.0.1:33545
 remove_validator $ADDRESS http://127.0.0.1:34545
 
 
 # 判断是否添加成功
-# curl -X POST --data '{"jsonrpc":"2.0","method":"ibft_getValidatorsByBlockNumber","params":["latest"], "id":1}' http://127.0.0.1:18545
+# curl -X POST --data '{"jsonrpc":"2.0","method":"ibft_getValidatorsByBlockNumber","params":["latest"], "id":1}' http://127.0.0.1:31545

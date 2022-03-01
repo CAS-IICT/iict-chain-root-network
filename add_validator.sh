@@ -19,7 +19,7 @@ function add_validator(){
     curl -X POST --data '{"jsonrpc":"2.0","method":"ibft_proposeValidatorVote","params":["'$1'", true], "id":1}' $2
 }
 
-add_validator $ADDRESS http://127.0.0.1:8545
+add_validator $ADDRESS http://127.0.0.1:31545
 add_validator $ADDRESS http://127.0.0.1:32545
 add_validator $ADDRESS http://127.0.0.1:33545
 add_validator $ADDRESS http://127.0.0.1:34545
