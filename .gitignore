@@ -2,3 +2,15 @@
 /logs
 /nodes
 /datas
+
+genesis-contracts/node_modules/
+genesis-contracts/build/
+.idea
+pids
+.idea/
+genesis-contracts/contracts/flattened/*.sol
+
+artifacts
+cache
+coverage
+coverage.json
