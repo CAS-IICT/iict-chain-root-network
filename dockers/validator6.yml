@@ -1,0 +1,34 @@
+version: '3.6'
+
+services:
+  validator6:
+    container_name: validator6
+    restart: "on-failure"
+    image: hyperledger/besu:${BESU_VERSION:-latest}
+    environment:
+      - NODE_NAME=validator6
+      - LOG4J_CONFIGURATION_FILE=/config/log-config.xml
+    entrypoint:
+      - /bin/bash
+      - -c
+      - |
+        /opt/besu/bin/besu \
+        --data-path=/opt/besu/data \
+        --config-file=/config/config.toml \
+        --genesis-file=/config/genesis.json \
+        --node-private-key-file=/opt/besu/keys/key \
+        --static-nodes-file=/config/static-nodes.json \
+        --p2p-host=$$(hostname -i) \
+        --Xdns-enabled=true \
+        --min-gas-price=0 \
+        --rpc-http-api=ADMIN,DEBUG,TRACE,TXPOOL,WEB3,ETH,NET,PERM,IBFT \
+        --rpc-ws-api=ADMIN,DEBUG,TRACE,TXPOOL,WEB3,ETH,NET,PERM,IBFT ;
+    volumes:
+      - ./config:/config
+      - ./nodes/validator6:/opt/besu/keys
+      - ./datas/validator6:/opt/besu/data
+      - ./logs/besu:/tmp/besu
+    ports:
+      - 36303:30303
+      - 36545:8545
+      - 36546:8546
