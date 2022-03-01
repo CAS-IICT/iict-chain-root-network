@@ -24,10 +24,10 @@ services:
         --rpc-http-api=ADMIN,DEBUG,TRACE,TXPOOL,WEB3,ETH,NET,PERM,IBFT \
         --rpc-ws-api=ADMIN,DEBUG,TRACE,TXPOOL,WEB3,ETH,NET,PERM,IBFT ;
     volumes:
-      - ./config:/config
-      - ./nodes/validator4:/opt/besu/keys
-      - ./datas/validator4:/opt/besu/data
-      - ./logs/besu:/tmp/besu
+      - ../config:/config
+      - ../nodes/validator4:/opt/besu/keys
+      - ../datas/validator4:/opt/besu/data
+      - ../logs/besu:/tmp/besu
     ports:
       - 34303:30303
       - 34545:8545
