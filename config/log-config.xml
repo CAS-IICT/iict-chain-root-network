@@ -20,7 +20,7 @@
   <Loggers>
     <Root level="${sys:root.log.level}">
       <AppenderRef ref="RollingFile" />
-      <AppenderRef ref="Console" />
+      <!-- <AppenderRef ref="Console" /> -->
     </Root>
   </Loggers>
 
