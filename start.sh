@@ -23,6 +23,4 @@ if [ ! -d datas/$1 ]; then
     chmod -R 0777 datas/$1
 fi
 
-export BOOTNODE=$(cat nodes/validator1/key.pub)
-
 docker-compose -f dockers/$1.yml up -d
