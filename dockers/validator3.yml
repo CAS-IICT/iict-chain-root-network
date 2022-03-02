@@ -13,6 +13,7 @@ services:
       - -c
       - |
         /opt/besu/bin/besu \
+        --identity=validator3 \
         --data-path=/opt/besu/data \
         --config-file=/config/config.toml \
         --genesis-file=/config/genesis.json \
